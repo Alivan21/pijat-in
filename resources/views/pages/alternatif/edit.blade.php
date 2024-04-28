@@ -26,6 +26,13 @@
                 </div>
               </div>
 
+              <div class="form-group">
+                <label for="deskripsi" class="mb-1 control-label">Deskripsi</label>
+                <div class="col-sm-12">
+                  <textarea class="form-control" id="deskripsi" name="deskripsi" placeholder="Deskripsi" required>{{ $alternatif->deskripsi }}</textarea>
+                </div>
+              </div>
+
               <button type="submit" class="btn btn-primary w-25 ms-auto">
                 Update
               </button>

@@ -17,6 +17,7 @@
                 <tr>
                   <th>No</th>
                   <th>Nama Alternatif</th>
+                  <th>Deskripsi</th>
                   <th width="280px">Action</th>
                 </tr>
               </thead>
@@ -44,6 +45,10 @@
           {
             data: 'nama',
             name: 'nama'
+          },
+          {
+            data: 'deskripsi',
+            name: 'deskripsi'
           },
           {
             data: 'action',
