@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('pesanan', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->foreignId('id_alternatif')->constrained('alternatif');
+            $table->foreignId('id_user')->constrained('users');
+            $table->foreignId('id_terapis')->constrained('terapis');
             $table->timestamps();
         });
     }

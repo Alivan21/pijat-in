@@ -38,7 +38,8 @@
 </head>
 
 <body>
-
+  @include('sweetalert::alert')
+  <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
@@ -50,7 +51,9 @@
           <li><a class="nav-link scrollto" href="#about">Alternatif</a></li>
           <li><a class="nav-link scrollto" href="#services">Kriteria</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Pesanan</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
+          @if (Auth::check())
+            <li><a class="nav-link scrollto" href="#contact">Rating</a></li>
+          @endif
           @if (Auth::check())
             <li class="dropdown">
               <a href="#">
@@ -58,7 +61,16 @@
                 <i class="bi bi-chevron-down"></i>
               </a>
               <ul>
-                <li><a href="{{ route('logout') }}">Logout</a></li>
+                <li>
+                  <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <a href="javascript:void(0)"
+                      onclick="event.preventDefault();
+                  this.closest('form').submit();">
+                      Logout
+                    </a>
+                  </form>
+                </li>
               </ul>
             </li>
           @else
